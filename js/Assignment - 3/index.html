@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Smart To-Do List</h1>
+    </header>
+
+    <main>
+      <!-- Task Input Section -->
+      <section class="task-input">
+        <input type="text" id="taskInput" placeholder="Add a new task..." />
+        <button id="addTaskBtn">Add</button>
+      </section>
+
+      <section class="controls">
+        <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search tasks..." 
+        />
+
+        <select id="sortSelect">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <!-- <option value="completed">Completed First</option>
+            <option value="pending">Pending First</option> -->
+        </select>
+      </section>
+
+
+      <!-- Filter Buttons -->
+      <section class="filters">
+        <button class="filter-btn active" data-filter="all">All 📋</button>
+        <button class="filter-btn" data-filter="completed">Completed ✅</button>
+        <button class="filter-btn" data-filter="pending">Pending 📝</button>
+      </section>
+
+      <!-- Tasks List -->
+      <ul id="taskList" class="task-list">
+        <!-- Tasks will be dynamically injected here -->
+      </ul>
+
+      <!-- Empty State -->
+      <p id="emptyState" class="empty-state"></p>
+    </main>
+
+    <!-- Analytics Sidebar -->
+    <aside class="analytics">
+      <h2>Analytics</h2>
+      <p>Total Tasks: <span id="totalTasks">0</span></p>
+      <p>Completed: <span id="completedTasks">0</span></p>
+      <p>Pending: <span id="pendingTasks">0</span></p>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

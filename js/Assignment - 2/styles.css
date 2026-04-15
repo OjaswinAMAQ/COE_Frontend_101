@@ -1,0 +1,171 @@
+/* ===============================
+   VARIABLES
+================================ */
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e293b;
+  --background-color: #f8fafc;
+  --text-color: #0f172a;
+  --card-bg: #ffffff;
+  --transition-speed: 0.3s;
+  --border-radius: 12px;
+  --faq-max-height: 500px;
+}
+
+/* ===============================
+   GLOBAL STYLES
+================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+input#faqSearch {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #ccc;
+  transition: border 0.2s;
+}
+
+input#faqSearch:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* ===============================
+   FAQ STYLES
+================================ */
+.faq-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  background-color: var(--card-bg);
+  transition: transform 0.2s;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+}
+
+.faq-question {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.faq-question:hover,
+.faq-question:focus {
+  background-color: #1e40af;
+  outline: none;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  transition: transform var(--transition-speed) ease;
+}
+
+.faq-item.expanded .faq-icon {
+  transform: rotate(45deg); /* + becomes x */
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.25rem;
+  background-color: #fff;
+  color: var(--text-color);
+  transition: max-height var(--transition-speed) ease, padding var(--transition-speed) ease;
+}
+
+.faq-answer p {
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.faq-item.expanded .faq-answer {
+  max-height: var(--faq-max-height);
+  padding: 1rem 1.25rem;
+}
+
+/* ===============================
+   BUTTONS FOR EXPAND/COLLAPSE ALL
+================================ */
+.faq-controls {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.faq-controls button {
+  padding: 0.5rem 1.25rem;
+  margin: 0 0.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.faq-controls button:hover {
+  background-color: #1e40af;
+}
+
+/* ===============================
+   RESPONSIVENESS
+================================ */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .faq-question {
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.9rem;
+  }
+
+  input#faqSearch {
+    width: 95%;
+  }
+}

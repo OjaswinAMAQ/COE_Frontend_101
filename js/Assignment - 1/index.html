@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechNova Onboarding Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Welcome Screen -->
+      <section id="welcome-screen" class="screen active">
+        <h1>Welcome to TechNova!</h1>
+        <p>
+          Test your knowledge about our company values, policies, and benefits.
+        </p>
+        <button id="start-btn">Start Quiz</button>
+      </section>
+
+      <!-- Quiz Screen -->
+      <section id="quiz-screen" class="screen">
+        <div class="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="question-container">
+          <h2 id="question-text"></h2>
+          <div id="options-container"></div>
+        </div>
+        <audio id="correct-sound" src="Correct.mp3"></audio>
+        <audio id="wrong-sound" src="Wrong.mp3"></audio>
+        <div id="score-container">
+          Score: <span id="score">0</span> / <span id="total">0</span>
+        </div>
+      </section>
+
+      <!-- Result Screen -->
+      <section id="result-screen" class="screen">
+        <h1>Quiz Completed!</h1>
+        <p id="final-score"></p>
+        <p id="custom-message"></p>
+        <p id="time-taken"></p>
+        <button id="retake-btn">Retake Quiz</button>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

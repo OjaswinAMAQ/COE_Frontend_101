@@ -1,0 +1,265 @@
+/* ===============================
+   VARIABLES (global)
+================================ */
+:root {
+  --primary: #2563eb;
+  --secondary: #1e293b;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --background: #f8fafc;
+  --card-bg: #ffffff;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --radius: 12px;
+  --shadow: rgba(0, 0, 0, 0.05);
+  --hover-shadow: rgba(0, 0, 0, 0.1);
+}
+
+
+/* ===============================
+   GLOBAL STYLES
+================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  gap: 20px;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* ===============================
+   TASK INPUT
+================================ */
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+.task-input input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 5px var(--primary);
+}
+
+.task-input button {
+  padding: 12px 20px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.task-input button:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   SEARCH & SORT CONTROLS
+================================ */
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+.controls input,
+.controls select {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.controls input:focus,
+.controls select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+  }
+}
+
+/* ===============================
+   FILTER BUTTONS
+================================ */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--primary);
+  background: white;
+  color: var(--primary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+.filter-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ===============================
+   TASK LIST
+================================ */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 15px;
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: box-shadow 0.2s, transform 0.1s;
+}
+
+.task-list li:hover {
+  box-shadow: 0 4px 8px var(--hover-shadow);
+  transform: translateY(-1px);
+}
+
+.task-list li.completed {
+  background: #d1fae5; /* Soft green for completed */
+  border-color: #22c55e;
+}
+
+.task-title {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.complete-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: var(--danger);
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* ===============================
+   EMPTY STATE
+================================ */
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  display: none;
+  margin-top: 10px;
+}
+
+/* ===============================
+   ANALYTICS
+================================ */
+.analytics {
+  padding: 15px;
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.analytics h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.analytics p {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* ===============================
+   RESPONSIVENESS
+================================ */
+@media (max-width: 600px) {
+  .task-input {
+    flex-direction: column;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filters .filter-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Employee Skill Tracker Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Employee Skill Tracker Dashboard</h1>
+    <p>TechNova Solutions — Internal HR Tool</p>
+  </header>
+
+  <!-- FORM -->
+  <section class="card">
+    <h2>Register Employee</h2>
+
+    <form id="employeeForm">
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="name" />
+        <small class="error"></small>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" id="email" />
+        <small class="error"></small>
+      </div>
+
+      <div class="form-group">
+        <label>Department</label>
+        <select id="department">
+          <option value="">Select Department</option>
+          <option>Engineering</option>
+          <option>HR</option>
+          <option>Sales</option>
+          <option>Finance</option>
+        </select>
+        <small class="error"></small>
+      </div>
+
+      <div class="form-group">
+        <label>Skills</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="HTML" /> HTML</label>
+          <label><input type="checkbox" value="CSS" /> CSS</label>
+          <label><input type="checkbox" value="JavaScript" /> JavaScript</label>
+          <label><input type="checkbox" value="Python" /> Python</label>
+          <label><input type="checkbox" value="SQL" /> SQL</label>
+        </div>
+        <small class="error"></small>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="certified" />
+          Certified?
+        </label>
+      </div>
+
+      <button type="submit">Add Employee</button>
+      <p id="successMsg"></p>
+
+    </form>
+  </section>
+
+  <!-- FILTERS -->
+  <section class="filters">
+    <button class="filter active" data-filter="all">All</button>
+    <button class="filter" data-filter="Engineering">Engineering</button>
+    <button class="filter" data-filter="HR">HR</button>
+    <button class="filter" data-filter="certified">Certified Only</button>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div>Total Employees: <span id="totalCount">0</span></div>
+    <div>Certified: <span id="certifiedCount">0</span></div>
+    <div>Most Common Skill: <span id="commonSkill">-</span></div>
+  </section>
+
+  <!-- TABLE -->
+  <section class="card">
+    <h2>Employee Records</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Department</th>
+          <th>Skills</th>
+          <th>Certified</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="employeeTable"></tbody>
+    </table>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
