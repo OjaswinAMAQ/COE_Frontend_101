@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Report an Issue</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body class="page-report">
+    <header>
+      <nav class="navbar" aria-label="Main Navigation">
+        <h2 class="logo">SmartCity</h2>
+
+        <!-- Hamburger Button -->
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="transport.html">Transport</a>
+          <a href="services.html">Services</a>
+          <a href="report-issue.html">Report Issue</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <form class="report-form" aria-labelledby="form-title">
+        <h2 id="form-title">Report a Civic Issue</h2>
+
+        <label for="name"
+          >Full Name <input id="name" type="text" required minlength="3"
+        /></label>
+
+        <label for="email"
+          >Email <input id="email" type="email" required
+        /></label>
+
+        <label for="location"
+          >Location <input id="location" type="text" required
+        /></label>
+
+        <label for="event-date">
+          Event Occurred On
+          <input
+            id="event-date"
+            type="date"
+            required
+            aria-describedby="date-help"
+          />
+        </label>
+        <script>
+          const dateInput = document.getElementById("event-date");
+          const today = new Date().toISOString().split("T")[0];
+          dateInput.max = today;
+        </script>
+
+        <label for="category"
+          >Category
+          <select id="category" required>
+            <option selected disabled value="">Select</option>
+            <option>Road</option>
+            <option>Water</option>
+            <option>Electricity</option>
+          </select></label
+        >
+
+        <label for="desc"
+          >Description
+          <textarea id="desc" rows="4" required minlength="10"></textarea>
+        </label>
+
+        <label for="file"
+          >Upload Photo
+          <input
+            id="file"
+            type="file"
+            accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+            required
+          /><small class="hint"> JPG or PNG only • Max size 5 MB </small></label
+        >
+
+        <label class="checkbox-label">
+          <input type="checkbox" required />
+          I agree to the terms
+        </label>
+
+        <button type="submit">Submit</button>
+
+        <p class="status" role="status" aria-live="polite">
+          ✔ Issue can be submitted now
+        </p>
+      </form>
+    </main>
+
+    <footer>
+      <p>© 2026 SmartCity Program</p>
+    </footer>
+
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,364 @@
+/* ===============================
+   THEME VARIABLES
+================================ */
+:root {
+  --primary: #0a3dbf;
+  --secondary: #f4f7ff;
+  --background: #f4f6f9;
+  --card-bg: #ffffff;
+  --text: #333;
+  --muted: #555;
+  --border: #e5e7eb;
+  --radius: 12px;
+  --spacing: 1rem;
+  --transition: all 0.3s ease-in-out;
+}
+
+/* ===============================
+   RESET & BASE
+================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary);
+  color: white;
+  padding: var(--spacing);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  font-weight: 500;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.sidebar-toggle {
+  display: none;
+  background: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 1100;
+}
+
+/* ===============================
+   LAYOUT
+================================ */
+.layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: var(--spacing);
+  padding: var(--spacing);
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: var(--secondary);
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  height: fit-content;
+  position: sticky;
+  left: 0;
+  top: 72px;
+  width: auto;
+}
+
+/* Sidebar form */
+.form-group {
+  margin-bottom: var(--spacing);
+}
+
+.filter-form input,
+.filter-form select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  background-color: var(--primary);
+  color: white;
+  transition: var(--transition);
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #062a8c;
+}
+
+/* ===============================
+   ROLE FILTER (FIELDSET)
+================================ */
+
+.role-fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: var(--spacing);
+}
+
+/* Title */
+.role-fieldset::before {
+  content: "Role";
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+}
+
+/* Label layout */
+.role-option {
+  display: flex;
+  align-items: center;       
+  gap: 0.6rem;               
+  padding: 0.45rem 0.6rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* FORCE checkbox to stay left */
+.role-option input[type="checkbox"] {
+  margin: 0;                 
+  flex-shrink: 0;          
+  width: 16px;
+  height: 16px;
+}
+
+/* Text styling */
+.role-option span {
+  flex: 1;
+  text-align: left;
+}
+
+/* Hover */
+.role-option:hover {
+  background-color: var(--card-bg);
+}
+
+/* Checked state */
+.role-option:has(input:checked) {
+  background-color: #807c7c8b;
+  border-left: 4px solid var(--primary);
+}
+
+/* Checked text */
+.role-option input:checked + span {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Keyboard focus */
+.role-option input:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ===============================
+   EMPLOYEE GRID
+================================ */
+.employee-grid {
+  display: grid;
+  gap: var(--spacing);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  margin-top: var(--spacing);
+}
+
+/* Employee Card */
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.badge {
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.location {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.bio {
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+.contact {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  padding: var(--spacing);
+  margin-top: var(--spacing);
+  font-size: 0.85rem;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 1024px) {
+  .layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: var(--spacing);
+  }
+
+  .sidebar {
+    width: 220px;
+    top: 64px; /* height of navbar */
+  }
+}
+
+/* Tablets & mobile */
+@media (max-width: 768px) {
+  .layout {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+  
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    position: fixed;          /* 👈 makes it a popup */
+    top: 70px;                /* below navbar */
+    right: 1rem;
+
+    width: 120px;
+    padding: 1rem;
+  
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+    z-index: 1100;
+    transform: scale(1);
+    opacity: 1;
+  }
+   /* Popup links */
+  .nav-links a {
+    color: var(--primary);
+    font-weight: 600;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    top: 0;
+    margin-bottom: var(--spacing);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  /* Mobile navigation */
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+  .employee-grid {
+    grid-template-columns: 1fr;
+  }
+}

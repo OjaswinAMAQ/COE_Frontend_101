@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Transport | SmartCity</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="page-transport">
+    <header>
+      <nav class="navbar" aria-label="Main Navigation">
+        <h2 class="logo">SmartCity</h2>
+
+        <!-- Hamburger Button -->
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="transport.html">Transport</a>
+          <a href="services.html">Services</a>
+          <a href="report-issue.html">Report Issue</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="transport-layout">
+        <h2>Bus Timetable</h2>
+        <div class="route-legend">
+          <span class="legend-item bus">Bus Route</span>
+          <span class="legend-item train">Train Route</span>
+          <span class="legend-item metro">Metro Route</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Route</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="route-bus">
+              <td>Route 1</td>
+              <td>Central</td>
+              <td>North Park</td>
+              <td>08:00</td>
+            </tr>
+            <tr class="route-train">
+              <td>Route 2</td>
+              <td>Airport</td>
+              <td>Downtown</td>
+              <td>08:30</td>
+            </tr>
+            <tr class="route-metro">
+              <td>Route 3</td>
+              <td>City Mall</td>
+              <td>Tech Park</td>
+              <td>09:00</td>
+            </tr>
+
+            <tr class="route-bus">
+              <td>Route 4</td>
+              <td>University</td>
+              <td>Central</td>
+              <td>09:20</td>
+            </tr>
+
+            <tr class="route-train">
+              <td>Route 5</td>
+              <td>Old Town</td>
+              <td>Industrial Area</td>
+              <td>09:45</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <h2>Station Map</h2>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d28057.103577437898!2d77.44389120000001!3d28.475392000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1768280478276!5m2!1sen!2sin"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+      <section class="card">
+        <h2>Weather Widget</h2>
+        <img src="assets/images/weather_widget.jpg" alt="Weather Widget" />
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 SmartCity Program</p>
+    </footer>
+
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

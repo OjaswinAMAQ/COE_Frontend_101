@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SmartCity Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+
+  <body class="page-home">
+    <header>
+      <nav class="navbar" aria-label="Main Navigation">
+        <h2 class="logo">SmartCity</h2>
+
+        <!-- Hamburger Button -->
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="transport.html">Transport</a>
+          <a href="services.html">Services</a>
+          <a href="report-issue.html">Report Issue</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="home-hero">
+        <h1>Welcome to SmartCity</h1>
+        <p>Your one-stop dashboard for city services.</p>
+      </section>
+
+      <section class="home-alerts">
+        <p>
+          🚨 Water shutdown in Sector 12 • 🚦 Heavy traffic near Central Avenue
+          • 🚌 Bus Route 5 delayed
+        </p>
+      </section>
+
+      <section class="home-grid">
+        <article class="card">
+          <h3>Public Transport</h3>
+          <p>
+            Check routes, schedules, and live updates.
+            <a href="transport.html">View Transport →</a>
+          </p>
+        </article>
+        <article class="card">
+          <h3>Report an Issue</h3>
+          <p>
+            Notify authorities about civic problems.
+            <a href="report-issue.html">Report Now →</a>
+          </p>
+        </article>
+        <article class="card">
+          <h3>City Services</h3>
+          <p>
+            Explore departments and ongoing projects.
+            <a href="services.html">Explore →</a>
+          </p>
+        </article>
+      </section>
+
+      <section class="video-section">
+        <article class="video-card">
+          <h3>Mayor’s Welcome</h3>
+          <video id="mayorVideo" controls>   <!--controlslist="nofullscreen nodownload noplaybackrate noremoteplayback"-->
+            <source src="assets/media/mayor.mp4" type="video/mp4"/>
+            <track kind="captions" srclang="en" src="assets/media/mayor.vtt" />
+          </video>
+
+          <audio id="mayorAudio">
+            <source src="assets/media/mayor-voice.mp3" type="audio/mpeg">
+          </audio>
+
+          <script>
+            const video = document.getElementById("mayorVideo");
+            const audio = document.getElementById("mayorAudio");
+
+            video.onplay = () => audio.play();
+            video.onpause = () => audio.pause();
+            video.onended = () => audio.pause();
+          </script>
+
+          <p>Message from the Mayor on SmartCity initiatives.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 SmartCity Program</p>
+    </footer>
+
+    
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+  </body>
+</html>

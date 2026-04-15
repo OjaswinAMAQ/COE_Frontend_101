@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="TechNova Solutions" />
+    <meta
+      name="description"
+      content="Internal employee directory for TechNova Solutions to discover teams, departments, and global colleagues."
+    />
+
+    <title>TechNova Employee Directory</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav aria-label="Primary Navigation" class="navbar">
+        <h1 class="logo">TechNova Employee Directory</h1>
+
+        <!-- hidden checkbox -->
+        <input type="checkbox" id="menu-toggle" class="visually-hidden" />
+
+        <!-- hamburger icon -->
+        <label
+          for="menu-toggle"
+          class="sidebar-toggle"
+          aria-label="Toggle Menu"
+        >
+          ☰
+        </label>
+
+        <!-- nav menu -->
+        <ul class="nav-links">
+          <li><a href="#main-content">Directory</a></li>
+          <li><a href="#departments">Departments</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#help">Help</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- =========================
+       MAIN LAYOUT
+  ========================== -->
+    <div class="layout">
+      <!-- FILTER SIDEBAR -->
+      <aside class="sidebar" aria-labelledby="filter-heading">
+        <h2 id="filter-heading">Filter Employees</h2>
+
+        <form class="filter-form">
+          <div class="form-group">
+            <label for="search">Search</label>
+            <input
+              type="search"
+              id="search"
+              name="search"
+              placeholder="Search by name..."
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="department">Department</label>
+            <select id="department" name="department">
+              <option>All</option>
+              <option>Engineering</option>
+              <option>HR</option>
+              <option>Marketing</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Location</label>
+            <select id="location" name="location">
+              <option>All</option>
+              <option>India</option>
+              <option>USA</option>
+              <option>Germany</option>
+            </select>
+          </div>
+
+          <fieldset class="form-group role-fieldset">
+            <legend class="visually-hidden">Role</legend>
+            <label class="role-option"
+              ><input type="checkbox" /> <span>Manager</span></label
+            >
+            <label class="role-option"
+              ><input type="checkbox" /> <span>Developer</span></label
+            >
+            <label class="role-option"
+              ><input type="checkbox" /> <span>QA</span></label
+            >
+          </fieldset>
+
+          <button type="reset" class="btn">Reset Filters</button>
+          <button type="reset" class="btn">Apply Filters</button>
+        </form>
+      </aside>
+
+      <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+      <main class="main-content" id="main-content">
+        <section aria-labelledby="employee-heading">
+          <h2 id="employee-heading">Employees</h2>
+
+          <!-- Employee Grid -->
+          <div class="employee-grid" role="list">
+            <!-- Employee Card -->
+            <article class="card">
+              <img
+                src="assets/avatar1.jpg"
+                alt="Jane Doe profile picture"
+                class="avatar"
+              />
+              <h3>Jane Doe</h3>
+              <p class="badge">Engineering · Senior Developer</p>
+              <p class="location">Bangalore, India</p>
+              <p class="bio">Passionate about scalable frontend systems.</p>
+              <div class="contact">
+                <a href="mailto:jane.doe@technova.com" class="btn">Email</a>
+                <a href="#" class="btn">LinkedIn</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <img
+                src="assets/avatar2.jpg"
+                alt="John Smith profile picture"
+                class="avatar"
+              />
+              <h3>John Smith</h3>
+              <p class="badge">Engineering · QA Engineer</p>
+              <p class="location">Berlin, Germany</p>
+              <p class="bio">Ensuring quality through automation.</p>
+              <div class="contact">
+                <a href="mailto:john.smith@technova.com" class="btn">Email</a>
+                <a href="#" class="btn">LinkedIn</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <img
+                src="assets/avatar3.jpg"
+                alt="Alice Lee profile picture"
+                class="avatar"
+              />
+              <h3>Alice Lee</h3>
+              <p class="badge">Marketing · Manager</p>
+              <p class="location">New York, USA</p>
+              <p class="bio">Driving campaigns that convert.</p>
+              <div class="contact">
+                <a href="mailto:alice.lee@technova.com" class="btn">Email</a>
+                <a href="#" class="btn">LinkedIn</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <img
+                src="assets/avatar4.jpg"
+                alt="Mohammed Khan profile picture"
+                class="avatar"
+              />
+              <h3>Mohammed Khan</h3>
+              <p class="badge">HR · Recruitment Specialist</p>
+              <p class="location">Mumbai, India</p>
+              <p class="bio">Finding the best talent worldwide.</p>
+              <div class="contact">
+                <a href="mailto:mohammed.khan@technova.com" class="btn"
+                  >Email</a
+                >
+                <a href="#" class="btn">LinkedIn</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <img
+                src="assets/avatar5.jpg"
+                alt="Sophie Müller profile picture"
+                class="avatar"
+              />
+              <h3>Sophie Müller</h3>
+              <p class="badge">Engineering · Developer</p>
+              <p class="location">Berlin, Germany</p>
+              <p class="bio">Frontend enthusiast with a love for CSS.</p>
+              <div class="contact">
+                <a href="mailto:sophie.mueller@technova.com" class="btn"
+                  >Email</a
+                >
+                <a href="#" class="btn">LinkedIn</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <img
+                src="assets/avatar6.jpg"
+                alt="Carlos Garcia profile picture"
+                class="avatar"
+              />
+              <h3>Carlos Garcia</h3>
+              <p class="badge">Marketing · Designer</p>
+              <p class="location">Madrid, Spain</p>
+              <p class="bio">Creating visuals that tell stories.</p>
+              <div class="contact">
+                <a href="mailto:carlos.garcia@technova.com" class="btn"
+                  >Email</a
+                >
+                <a href="#" class="btn">LinkedIn</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <img
+                src="assets/avatar7.jpg"
+                alt="Emma Johnson profile picture"
+                class="avatar"
+              />
+              <h3>Emma Johnson</h3>
+              <p class="badge">QA · Tester</p>
+              <p class="location">Toronto, Canada</p>
+              <p class="bio">Ensuring flawless releases.</p>
+              <div class="contact">
+                <a href="mailto:emma.johnson@technova.com" class="btn">Email</a>
+                <a href="#" class="btn">LinkedIn</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <img
+                src="assets/avatar8.jpg"
+                alt="Ravi Patel profile picture"
+                class="avatar"
+              />
+              <h3>Ravi Patel</h3>
+              <p class="badge">Engineering · Developer</p>
+              <p class="location">Bangalore, India</p>
+              <p class="bio">
+                Loves building backend APIs and cloud solutions.
+              </p>
+              <div class="contact">
+                <a href="mailto:ravi.patel@technova.com" class="btn">Email</a>
+                <a href="#" class="btn">LinkedIn</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- =========================
+       FOOTER
+  ========================== -->
+    <footer class="footer">
+      <p>&copy; 2026 TechNova Solutions | Internal use only</p>
+      <p>Admin Department · Contact: admin@technova.com</p>
+    </footer>
+  </body>
+</html>

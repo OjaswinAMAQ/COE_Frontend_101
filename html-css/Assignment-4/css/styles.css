@@ -1,0 +1,543 @@
+/* ===============================
+   VARIABLES (global)
+================================ */
+:root {
+  --primary: #2563eb;
+  --secondary: #1e293b;
+  --accent: #22c55e;
+  --background: #f8fafc;
+  --text: #0f172a;
+  --white: #ffffff;
+  --radius: 12px;
+}
+
+/* ===============================
+   RESET (global)
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img, video, audio {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===============================
+   Header and Footer (global)
+================================ */
+header {
+  background: var(--secondary);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+}
+
+.nav-links a:hover {
+  background: var(--primary);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+}
+
+footer {
+  background: var(--secondary);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+/* ===============================
+   HOME PAGE
+================================ */
+.page-home .home-hero {
+    background: linear-gradient(rgb(250, 158, 20), rgb(51, 61, 86)),
+        url("assets/images/city-hero.jpg") center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.page-home .home-alerts {
+    background: var(--primary);
+    color: var(--white);
+    overflow: hidden;
+}
+
+.page-home .home-alerts p {
+    padding: 0.75rem;
+    white-space: nowrap;
+    animation: ticker 15s linear infinite;
+}
+
+@keyframes ticker {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.page-home .home-grid {
+    display: grid;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+}
+
+.page-home .home-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.page-home .video-section {
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.page-home .card {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.page-home .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.page-home .card a {
+    color: #4419ef;
+}
+
+.page-home .video-card {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    text-align: center;
+}
+
+.page-home .video-card h3 {
+    margin-bottom: 1rem;
+}
+
+.page-home .video-card p {
+    margin-top: 1rem;
+}
+
+.page-home .video-card video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===============================
+   REPORT PAGE
+================================ */
+.page-report .report-form {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.page-report .report-form label:not(.checkbox-label) {
+  font-weight: 600;
+  display: block;
+}
+
+.page-report .report-form input:not([type="checkbox"]),
+.page-report .report-form select,
+.page-report .report-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.5rem 0 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.page-report .hint {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-report .checkbox-label {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.page-report .checkbox-label input[type="checkbox"] {
+  margin: 0;
+  width: auto;
+}
+
+.page-report .report-form input:invalid,
+.page-report .report-form select:invalid,
+.page-report .report-form textarea:invalid {
+  border-color: #ef4444;
+}
+
+.page-report .report-form input:valid,
+.page-report .report-form select:valid,
+.page-report .report-form textarea:valid {
+  border-color: var(--accent);
+}
+
+.page-report .report-form button {
+  display: block;
+  width: 100%;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.page-report .report-form button:hover {
+  background: #081020;
+}
+
+.page-report .status {
+  display: none;
+  margin-top: 1rem;
+  text-align: center;
+  color: #15803d;
+  font-weight: 600;
+}
+
+.page-report .report-form:valid .status {
+  display: block;
+}
+
+.page-report input:focus,
+.page-report select:focus,
+.page-report textarea:focus {
+  border-color: var(--secondary);
+}
+
+/* ===============================
+   SERVICES PAGE
+================================ */
+.page-services .services-page {
+  max-width: 95%;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+.page-services .services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.page-services .audio-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 2rem;
+}
+
+.page-services .audio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.page-services .audio-card audio {
+  width: 100%;
+}
+
+.page-services .services-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.page-services .service-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-services .service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.page-services .service-card h3 {
+  font-size: 1.1rem;
+  color: var(--secondary);
+}
+
+.page-services .service-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.page-services .media-card img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.page-services .media-card audio {
+  width: 100%;
+}
+
+.page-services .service-card button {
+  margin-top: auto;
+  align-self: flex-start;
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.page-services .service-card button:hover {
+  background: #1d4ed8;
+}
+
+/* ===============================
+   TRANSPORT PAGE
+================================ */
+.page-transport .transport-layout {
+  text-align: center;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.page-transport .transport-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.page-transport .card {
+  margin: auto;
+  padding: 2rem;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.page-transport .card h2 {
+  margin-bottom: 1rem;
+} 
+
+.page-transport .card img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.page-transport .map-container iframe {
+  width: 90%;
+  aspect-ratio: 25/9;
+  border: 0;
+}
+
+/* ===============================
+   ROUTE LEGEND
+================================ */
+.page-transport .route-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.page-transport .legend-item {
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  cursor: default;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.page-transport .legend-item:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+/* Legend Colors */
+.page-transport .legend-item.bus { background: #2563eb; }
+.page-transport .legend-item.train { background: #16a34a; }
+.page-transport .legend-item.metro { background: #dc2626; }
+
+/* ===============================
+   ROUTE COLOR MAPPING
+================================ */
+.page-transport .route-bus {
+  border-left: 6px solid #2563eb;
+}
+
+.page-transport .route-train {
+  border-left: 6px solid #16a34a;
+}
+
+.page-transport .route-metro {
+  border-left: 6px solid #dc2626;
+}
+
+
+.page-transport table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.page-transport th, 
+.page-transport td {
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.page-transport thead {
+  background: var(--secondary);
+  color: white;
+}
+
+.page-transport tbody tr:nth-child(even) {
+  background: #bbbdbe4a;
+}
+
+.page-transport tbody tr:hover {
+  background: #667490;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--secondary);
+    display: none;
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
+
+  .nav-links a {
+    padding: 0.75rem;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-home .home-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .page-services .services-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .page-services .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta & SEO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TechNova Solutions internal knowledge portal for onboarding engineers across teams and regions.">
+  <title>TechNova Internal Knowledge Portal</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Header & Navigation -->
+  <input type="checkbox" id="themeToggle" hidden>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">TechNova</h1>
+      <ul class="nav-links">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Company Introduction -->
+    <section id="introduction" class="intro-layout">
+      <!-- LEFT: TEXT CONTENT -->
+      <div class="intro-text">
+        <!-- Top text -->
+        <div class="intro-description">
+          <h2>Welcome to TechNova Solutions</h2>
+          <p>
+            TechNova Solutions is a global IT consulting company delivering innovative
+            digital solutions across industries.
+          </p>
+        </div>
+        <!-- Bottom two-column content -->
+        <div class="intro-lists">
+          <div>
+            <h3>Our Global Offices</h3>
+            <ul class="office-list">
+              <li>India</li>
+              <li>United States</li>
+              <li>Germany</li>
+              <li>Singapore</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Onboarding Steps</h3>
+            <ol>
+              <li>Complete HR documentation</li>
+              <li>Access internal tools</li>
+              <li>Meet your team</li>
+              <li>Start project training</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <!-- RIGHT: IMAGE -->
+      <div class="intro-image">
+        <img src="images/office.jpg" alt="TechNova modern office workspace">
+      </div>
+    </section>
+
+
+    <!-- Resources Table -->
+    <section id="resources">
+      <h2>Internal Resources</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Description</th>
+            <th title="Owner">Owner</th>
+            <th title="link">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jira</td>
+            <td>Project and task management</td>
+            <td>PMO Team</td>
+            <td><a href="#resources">Open</a></td>
+          </tr>
+          <tr>
+            <td>Confluence</td>
+            <td>Internal documentation</td>
+            <td>Engineering</td>
+            <td><a href="#resources">Open</a></td>
+          </tr>
+          <tr>
+            <td>GitHub</td>
+            <td>Source code repository</td>
+            <td>DevOps</td>
+            <td><a href="#resources">Open</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+      <h2>Meet the Core Team</h2>
+
+      <div class="team-grid">
+        <figure>
+          <img src="images/team1.jpg" alt="Ananya Sharma - Engineering Manager">
+          <figcaption>
+            <h3>Ananya Sharma</h3>
+            <p>Engineering Manager</p>
+            <small>Loves clean architecture ✨</small>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/team2.jpg" alt="Rahul Mehta - DevOps Lead">
+          <figcaption>
+            <h3>Rahul Mehta</h3>
+            <p>DevOps Lead</p>
+            <small>Automates everything ⚙️</small>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/team3.jpg" alt="Sara Wilson - UX Designer">
+          <figcaption>
+            <h3>Sara Wilson</h3>
+            <p>UX Designer</p>
+            <small>Design is thinking made visual 🎨</small>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Multimedia Section -->
+    <section id="media">
+      <h2>Getting Started Media</h2>
+
+      <video controls >
+        <source src="media/intro.mp4" type="video/mp4">
+        <track kind="captions" srclang="en" src="media/intro-captions.vtt" label="English captions" default>
+      </video>
+      <p>Introductory video explaining TechNova culture and workflows.</p>
+
+      <audio controls>
+        <source src="media/podcast.mp3" type="audio/mpeg">
+      </audio>
+      <p>Podcast: A day in the life at TechNova.</p>
+    </section>
+
+    <!-- Newsletter Form -->
+    <aside id="newsletter">
+      <h2>Subscribe to Our Newsletter</h2>
+
+      <form>
+        <label>
+          Full Name
+          <input type="text" name="name" required>
+        </label>
+
+        <label>
+          Email Address
+          <input type="email" name="email" required aria-label="Email Address">
+        </label>
+
+        <label>
+          Department
+          <select name="department">
+            <option>Engineering</option>
+            <option>Design</option>
+            <option>HR</option>
+            <option>Marketing</option>
+          </select>
+        </label>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="agree" required>
+            <label for="agree">I agree to receive emails</label>
+        </div>
+
+        <button type="submit">Subscribe</button>
+      </form>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 TechNova Solutions. Internal Use Only.</p>
+  </footer>
+  <label for="themeToggle" class="theme-toggle-btn">
+    🌙
+  </label>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>City Services | SmartCity</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body class="page-services">
+    <header>
+      <nav class="navbar" aria-label="Main Navigation">
+        <h2 class="logo">SmartCity</h2>
+
+        <!-- Hamburger Button -->
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="transport.html">Transport</a>
+          <a href="services.html">Services</a>
+          <a href="report-issue.html">Report Issue</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="services-page">
+      <!-- First 3 cards in grid -->
+      <section class="services-grid">
+        <article class="service-card">
+          <h3>Parks Department</h3>
+          <p>Maintaining green spaces, parks, and recreational facilities.</p>
+        </article>
+
+        <article class="service-card">
+          <h3>Health Services</h3>
+          <p>Public healthcare programs, hospitals, and emergency services.</p>
+        </article>
+
+        <article class="service-card">
+          <h3>Waste Management</h3>
+          <p>Garbage collection, recycling programs, and cleanliness drives.</p>
+        </article>
+      </section>
+      <section class="audio-card">
+        <h3>City Announcement</h3>
+        <audio controls>
+          <source src="assets/media/city-announcement.mp3" type="audio/mpeg" />
+        </audio>
+      </section>
+
+      <!-- Remaining cards in columnar, centered -->
+      <section class="services-features">
+        <article class="service-card media-card">
+          <h3>Ongoing City Projects</h3>
+          <img
+            src="assets/images/project-2.jpg"
+            alt="Smart city development project"
+          />
+        </article>
+
+        <article class="service-card media-card">
+          <h3>Find My Location</h3>
+          <img src="assets/images/static-map.png" alt="City park map" />
+          <button type="button">Find My Location</button>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 SmartCity Program</p>
+    </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+  </body>
+</html>
